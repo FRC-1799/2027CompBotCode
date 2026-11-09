@@ -80,6 +80,10 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+tasks.named('run') {
+    environment 'WAYLAND_DISPLAY', ''
+}
+
 test {
     useJUnitPlatform()
     systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
@@ -87,7 +91,7 @@ test {
 
 // Simulation configuration (e.g. environment variables).
 wpi.sim.addGui().defaultEnabled = true
-wpi.sim.addDriverstation()
+wpi.sim.addDriverstation() //.defaultEnabled = true
 
 application.mainClass = ROBOT_MAIN_CLASS
 

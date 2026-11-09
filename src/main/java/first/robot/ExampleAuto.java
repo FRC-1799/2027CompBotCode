@@ -6,8 +6,9 @@ package first.robot;
 
 import org.wpilib.opmode.Autonomous;
 import org.wpilib.opmode.OpMode;
+import org.wpilib.opmode.Teleop;
 
-@Autonomous
+@Autonomous(textColor = "#FFFFFF", backgroundColor = "#FF0000", description = "Run full speed until we hit something", name = "Unscheduled Disassembly")
 public class ExampleAuto implements OpMode {
   public ExampleAuto(Robot robot) {
     robot.exampleMechanism.exampleCondition.whileTrue(robot.exampleMechanism.exampleCommand());
